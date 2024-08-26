@@ -8,3 +8,9 @@ services:
       - 8080:8080
     volumes:
       - ./go:/go/src
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/postgres/Dockerfile
+    env_file:
+      - ./docker/postgres/.env
